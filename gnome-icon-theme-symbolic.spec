@@ -1,12 +1,12 @@
 Summary:	Default symbolic icon themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy ikon symbolicznych dla środowiska GNOME
 Name:		gnome-icon-theme-symbolic
-Version:	2.30.0
-Release:	2
+Version:	2.31.0
+Release:	1
 License:	GPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	5d07a466ad65d36088113a0e9d71b508
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/2.31/%{name}-%{version}.tar.bz2
+# Source0-md5:	7600db350dae127cb1ff865aa30be7f9
 # http://bugzilla.gnome.org/show_bug.cgi?id=606245
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
