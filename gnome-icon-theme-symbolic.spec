@@ -1,22 +1,21 @@
 Summary:	Default symbolic icon themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy ikon symbolicznych dla środowiska GNOME
 Name:		gnome-icon-theme-symbolic
-Version:	2.31.0
+Version:	2.91.0
 Release:	1
 License:	GPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/2.31/%{name}-%{version}.tar.bz2
-# Source0-md5:	7600db350dae127cb1ff865aa30be7f9
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/2.91/%{name}-%{version}.tar.bz2
+# Source0-md5:	eac23bb81a9847c3006a8ce0a9bff46c
 # http://bugzilla.gnome.org/show_bug.cgi?id=606245
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	glib2-devel
-BuildRequires:	gtk+2 >= 2:2.14.0
 BuildRequires:	icon-naming-utils >= 0.8.7
 BuildRequires:	pkgconfig >= 1:0.19
-Requires(post,postun):	gtk+2
-Requires:	gnome-icon-theme >= 2.30.0
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	gnome-icon-theme >= 2.91.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,7 +34,8 @@ Domyślne motywy ikon symbolicznych dla środowiska GNOME.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	GTK_UPDATE_ICON_CACHE=/bin/true
 %{__make}
 
 %install
@@ -43,8 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-gtk-update-icon-cache -ft $RPM_BUILD_ROOT%{_iconsdir}/gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
