@@ -2,7 +2,7 @@ Summary:	Default symbolic icon themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy ikon symbolicznych dla środowiska GNOME
 Name:		gnome-icon-theme-symbolic
 Version:	3.0.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/3.0/%{name}-%{version}.tar.bz2
@@ -38,8 +38,8 @@ Domyślne motywy ikon symbolicznych dla środowiska GNOME.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
+	install_sh="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -54,6 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README
+%dir %{_iconsdir}/gnome/scalable
 %dir %{_iconsdir}/gnome/scalable/actions
 %dir %{_iconsdir}/gnome/scalable/apps
 %dir %{_iconsdir}/gnome/scalable/categories
