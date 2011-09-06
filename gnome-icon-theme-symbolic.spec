@@ -5,8 +5,8 @@ Version:	3.1.90
 Release:	1
 License:	GPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/3.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	4c651354ebbcc45433b52d37d422029e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme-symbolic/3.1/%{name}-%{version}.tar.xz
+# Source0-md5:	48893593c49783a79b528f89211bac7a
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -14,6 +14,8 @@ BuildRequires:	glib2-devel
 BuildRequires:	icon-naming-utils >= 0.8.7
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.601
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	gnome-icon-theme >= 3.1.90
 BuildArch:	noarch
